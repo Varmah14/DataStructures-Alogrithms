@@ -1,0 +1,101 @@
+What is the Two Pointers Technique?
+
+The two pointers technique is a problem-solving approach where you use two indices (pointers) 
+to traverse a data structure (usually an array or string) from different directions or at different speeds.
+
+Why use it?
+
+It reduces time complexity (often from O(n²) → O(n)).
+
+Helps avoid nested loops by scanning once with two pointers.
+
+Typical patterns
+
+Opposite ends → One pointer at the start, one at the end. Move inward based on conditions.
+Example: check if a string is a palindrome, two-sum in sorted array.
+
+Same direction → Both pointers move forward, but at different speeds or under different conditions.
+Example: fast and slow pointers (Floyd’s cycle detection), sliding window problems.
+
+Fixed vs. moving pointer → One pointer holds the "anchor," while the other explores forward.
+Example: remove duplicates from sorted array.
+
+==============================================================
+Leet code questions
+
+🔹 Beginner (Easy–Medium)
+==============================================================
+
+167. Two Sum II – Input array is sorted
+
+Sorted array, find two numbers that sum to target.
+--------------------------------------------------------------
+
+125. Valid Palindrome
+
+Check if a string is a palindrome (ignore non-alphanumeric).
+--------------------------------------------------------------
+
+344. Reverse String
+
+Swap from both ends.
+--------------------------------------------------------------
+
+283. Move Zeroes
+
+Shift non-zeros forward using slow/fast pointer.
+--------------------------------------------------------------
+
+26. Remove Duplicates from Sorted Array
+
+Classic same-direction pointers problem.
+==============================================================
+
+🔹 Intermediate (Medium)
+==============================================================
+11. Container With Most Water
+
+Max area between two vertical lines.
+--------------------------------------------------------------
+15. 3Sum
+
+Sort + fix one number + two pointers for the rest.
+--------------------------------------------------------------
+16. 3Sum Closest
+
+Same idea, but track closest sum.
+--------------------------------------------------------------
+18. 4Sum
+
+Generalization of 3Sum with nested two pointers.
+--------------------------------------------------------------
+80. Remove Duplicates from Sorted Array II
+
+At most two occurrences allowed.
+--------------------------------------------------------------
+209. Minimum Size Subarray Sum
+
+Sliding window with two pointers.
+==============================================================
+
+🔹 Advanced (Harder Variations)
+==============================================================
+42. Trapping Rain Water
+
+Left/right max heights with two pointers.
+--------------------------------------------------------------
+76. Minimum Window Substring
+
+Sliding window variant (two pointers controlling substring).
+--------------------------------------------------------------
+30. Substring with Concatenation of All Words
+
+Advanced sliding window with two pointers.
+--------------------------------------------------------------
+392. Is Subsequence
+
+Compare two strings with two pointers.
+--------------------------------------------------------------
+680. Valid Palindrome II
+
+Like palindrome but allow one mismatch (branch two pointers).
