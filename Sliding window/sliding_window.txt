@@ -1,0 +1,62 @@
+Lesson 1 — Sliding Window (fixed & variable)
+When to use (spot it in <5s)
+
+The task is about a contiguous subarray/substring.
+
+Wording like longest / shortest / number of substrings or subarrays that satisfy some property.
+
+If the property depends on counts/frequency and all numbers are non-negative → sliding window is ideal.
+If sums include negatives, prefer prefix-sum + hashmap (next lesson).
+
+Core idea
+
+Grow the window on the right; when the constraint is violated, shrink from the left until valid again. Track the best answer along the way.
+
+
+========================================================================================================================================
+
+Core must-do (variable window)
+
+Longest Substring Without Repeating Characters — https://leetcode.com/problems/longest-substring-without-repeating-characters/
+
+Minimum Window Substring — https://leetcode.com/problems/minimum-window-substring/
+
+Longest Repeating Character Replacement — https://leetcode.com/problems/longest-repeating-character-replacement/
+
+Sliding Window Maximum — https://leetcode.com/problems/sliding-window-maximum/
+
+Minimum Size Subarray Sum — https://leetcode.com/problems/minimum-size-subarray-sum/
+
+Exactly-K via “atMost(K) − atMost(K−1)”
+
+Subarrays with K Different Integers — https://leetcode.com/problems/subarrays-with-k-different-integers/
+
+Count Number of Nice Subarrays (K odd counts) — https://leetcode.com/problems/count-number-of-nice-subarrays/
+
+Number of Substrings Containing All Three Characters — https://leetcode.com/problems/number-of-substrings-containing-all-three-characters/
+
+Fruit Into Baskets (at most 2 types) — https://leetcode.com/problems/fruit-into-baskets/
+
+String/anagram windows
+
+Permutation in String — https://leetcode.com/problems/permutation-in-string/
+
+Find All Anagrams in a String — https://leetcode.com/problems/find-all-anagrams-in-a-string/
+
+Substring with Concatenation of All Words — https://leetcode.com/problems/substring-with-concatenation-of-all-words/
+
+Numeric windows (very OA-friendly)
+
+Max Consecutive Ones III — https://leetcode.com/problems/max-consecutive-ones-iii/
+
+Longest Subarray of 1’s After Deleting One Element — https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/
+
+Subarray Product Less Than K — https://leetcode.com/problems/subarray-product-less-than-k/
+
+Binary Subarrays With Sum — https://leetcode.com/problems/binary-subarrays-with-sum/
+
+Maximum Number of Vowels in a Substring of Given Length — https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/
+
+Maximum Average Subarray I — https://leetcode.com/problems/maximum-average-subarray-i/
+
+Get Equal Substrings Within Budget — https://leetcode.com/problems/get-equal-substrings-within-budget/
