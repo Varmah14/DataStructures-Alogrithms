@@ -1,0 +1,120 @@
+Got it — we **skip Prefix Sum** for now.
+Next core topic in the roadmap:
+
+# ✅ **Sorting + Greedy**
+
+This is one of the **highest ROI** interview topics.
+If you master **intervals + scheduling style problems**, you unlock ~30–40 LC mediums instantly.
+
+---
+
+## 🎯 Core Greedy Philosophy
+
+Greedy works when **making the best local choice leads to a globally optimal result**.
+
+The trick is knowing _what to sort by_.
+
+### Most common patterns:
+
+| Problem Type                        | Sort By                            | Why                                  |
+| ----------------------------------- | ---------------------------------- | ------------------------------------ |
+| Merge / Overlap intervals           | Start time                         | To detect and merge overlaps         |
+| Select non-overlapping intervals    | End time (not start!)              | Leaves max room for future intervals |
+| Meeting rooms / scheduling          | Start time + min-heap of end times | Count overlaps                       |
+| Minimize number of resources        | End time comparisons               | Same as meeting rooms                |
+| Activity selection / job scheduling | Earliest finish time               | Keeps future choices open            |
+| Task scheduling with cooldown       | Count frequencies                  | Arrange highest freq first           |
+| Min cost / min difference pairing   | Sort both arrays                   | then pair in order                   |
+
+---
+
+## 🧠 Core Templates
+
+### 1) **Merge Intervals**
+
+```python
+intervals.sort()
+merged = []
+for s, e in intervals:
+    if not merged or merged[-1][1] < s:
+        merged.append([s, e])
+    else:
+        merged[-1][1] = max(merged[-1][1], e)
+return merged
+```
+
+### 2) **Minimum Meeting Rooms**
+
+```python
+intervals.sort(key=lambda x: x[0])
+import heapq
+rooms = []
+for s, e in intervals:
+    if rooms and rooms[0] <= s:
+        heapq.heappop(rooms)
+    heapq.heappush(rooms, e)
+return len(rooms)
+```
+
+### 3) **Select Maximum Non-Overlapping Intervals**
+
+(_the trick:_ **sort by end time**)
+
+```python
+intervals.sort(key=lambda x: x[1])
+count = 0
+end = -inf
+for s, e in intervals:
+    if s >= end:
+        count += 1
+        end = e
+return count
+```
+
+---
+
+## 🎯 Key Leetcode Problems (Do These Only)
+
+| Problem                                   | Why It Matters                    | Difficulty       |
+| ----------------------------------------- | --------------------------------- | ---------------- |
+| **56. Merge Intervals**                   | Baseline template                 | ⭐ Medium        |
+| **252. Meeting Rooms** _(Premium)_        | Simple overlap logic              | Easy             |
+| **253. Meeting Rooms II** _(Premium)_     | Heap scheduling                   | ⭐ Medium        |
+| **435. Non-overlapping Intervals**        | Greedy by end time                | ⭐⭐ Medium      |
+| **452. Minimum Arrows to Burst Balloons** | Interval covering = same as above | ⭐⭐ Medium      |
+| **763. Partition Labels**                 | Greedy chunk partition            | Medium           |
+| **621. Task Scheduler**                   | Greedy + counting                 | ⭐⭐ Medium/Hard |
+| **57. Insert Interval**                   | Merge variant                     | Medium           |
+| **986. Interval List Intersections**      | Two pointers                      | Medium           |
+
+You only need these to deeply understand everything in this topic.
+
+---
+
+## 🔥 But since you want to move FAST:
+
+We’ll do **5 problems** that each represent a different greedy situation:
+
+| #   | Problem                           | Pattern                            |
+| --- | --------------------------------- | ---------------------------------- |
+| 1   | 56. Merge Intervals               | sort by start                      |
+| 2   | 435. Non-overlapping Intervals    | sort by end                        |
+| 3   | 253. Meeting Rooms II             | heap scheduling                    |
+| 4   | 452. Min Arrows to Burst Balloons | same as #2 but phrased differently |
+| 5   | 763. Partition Labels             | greedy interval grouping           |
+
+**These 5 = full Greedy mastery.**
+Once these feel easy → we move to **Binary Search on Answer** (very short topic).
+
+---
+
+## ✅ Before we start the problems — one quick mental check
+
+Which sort should be used for each?
+
+| Problem                   | Sort By | Your Answer |
+| ------------------------- | ------- | ----------- |
+| Merge Intervals           | ?       |             |
+| Non-overlapping Intervals | ?       |             |
+| Meeting Rooms             | ?       |             |
+| Burst Balloons            | ?       |             |

@@ -1,0 +1,133 @@
+Sweet — next up: **Binary Search on Answer** (super short, super useful). After this we can jump to **Trees** 🌲.
+
+# ✅ When to use it
+
+Use when the solution asks to **minimize a maximum** / **maximize a minimum** and there’s a **monotone predicate**:
+
+- If `x` is feasible, then all `x' ≥ x` (or `≤ x`) are feasible.
+
+Examples: capacity, speed, days, distance, chunk size.
+
+---
+
+# 🧠 Template (Parametric Search)
+
+```python
+def solve(nums, target_params):
+    def ok(x) -> bool:
+        # Return True if candidate x is feasible.
+        # Must be MONOTONE across x.
+        pass
+
+    lo, hi = LBOUND, HBOUND  # choose tight bounds!
+    while lo < hi:
+        mid = (lo + hi) // 2
+        if ok(mid):        # we can achieve mid → try smaller
+            hi = mid
+        else:              # too small → need bigger
+            lo = mid + 1
+    return lo  # smallest feasible x
+```
+
+### Picking bounds fast
+
+- Sum/partition problems: `lo = max(nums)`, `hi = sum(nums)`
+- Speed/capacity: `lo = 1`, `hi = max(nums)` or something safe
+- Distances/forces: `lo = 1`, `hi = max(nums) - min(nums)`
+
+---
+
+# ⚙️ Common `ok(x)` patterns
+
+**1) Partition array into chunks with cost ≤ x**
+
+```python
+def ok(x):
+    # can we split into ≤ m chunks each with sum ≤ x ?
+    chunks, acc = 1, 0
+    for a in nums:
+        if acc + a > x:
+            chunks += 1
+            acc = a
+        else:
+            acc += a
+    return chunks <= m
+```
+
+**2) Capacity / speed to finish within D days / H hours**
+
+```python
+def ok(cap):
+    days = 1; load = 0
+    for w in weights:
+        if load + w > cap:
+            days += 1
+            load = 0
+        load += w
+    return days <= D
+```
+
+**3) Minimum days to make bouquets**
+
+```python
+def ok(days):
+    bouquets = 0; run = 0
+    for t in bloomDay:
+        run = run + 1 if t <= days else 0
+        if run == k:
+            bouquets += 1
+            run = 0
+    return bouquets >= m
+```
+
+**4) Maximize minimum distance (place balls/aggressive cows)**
+
+```python
+def ok(dist):
+    placed = 1
+    last = positions[0]
+    for p in positions[1:]:
+        if p - last >= dist:
+            placed += 1
+            last = p
+            if placed == m:
+                return True
+    return False
+```
+
+---
+
+# 🧪 Representative LeetCode set (do these 5)
+
+1. **875. Koko Eating Bananas (M)** — speed to finish in H hours → `ok(speed)`
+2. **1011. Capacity To Ship Packages Within D Days (M)** — same pattern as #1
+3. **1482. Min Days to Make m Bouquets (M)** — `ok(days)` with runs
+4. **410. Split Array Largest Sum (H)** — partition into `m` chunks (minimize max sum)
+5. **1552. Magnetic Force Between Two Balls (M)** — maximize min distance with `ok(dist)`
+
+(If you want one classic index-BS: **34. Find First/Last Position** — lower_bound / upper_bound.)
+
+---
+
+# 🧯 Pitfalls
+
+- Wrong monotonic direction in `ok`. Test small examples!
+- Too-loose bounds → more iterations (fine but slower). Prefer tight `lo/hi`.
+- Integers: always use `mid = (lo + hi) // 2`.
+- For **maximize minimum**, you’ll often put `ok(mid)` meaning “can place with distance ≥ mid”; final answer is `hi` or `lo` accordingly (with the standard loop above, return `lo`).
+
+---
+
+# ⚡ 20-minute drill (optional)
+
+- Do 875 → 1011 → 1482 → 410 (stop at 20 min; bookmark if over).
+- While coding, write `ok` first, then bounds, then loop.
+
+---
+
+If you’re good here, say **“Trees”** and we’ll jump straight into:
+
+- Traversal patterns (recursive/iterative)
+- Path-sum & diameter templates
+- LCA (binary lifting quick primer)
+- 5 must-do tree problems.
