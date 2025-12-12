@@ -1,0 +1,228 @@
+Awesome—let’s turn your playbook into a **targeted LeetCode checklist** so you can cover each topic’s main “situations” fast. I’ve kept it **high-signal**, tagged by difficulty, and noted **(Premium)** where applicable. Aim for **3–4 per topic** first pass, then sweep the rest.
+
+---
+
+# 1) Two Pointers
+
+* 167. Two Sum II – Input Array Is Sorted (E) ⭐
+* 125. Valid Palindrome (E)
+* 283. Move Zeroes (E) *(pattern flex)*
+* 26. Remove Duplicates from Sorted Array (E)
+* 11. Container With Most Water (M) ⭐
+* 15. 3Sum (M) ⭐
+* 16. 3Sum Closest (M)
+* 18. 4Sum (M/H)
+* 42. Trapping Rain Water (H) ⭐ *(two-pointer or stack)*
+
+# 2) Sliding Window
+
+* 3. Longest Substring Without Repeating Characters (M) ⭐
+* 209. Minimum Size Subarray Sum (M)
+* 76. Minimum Window Substring (H) ⭐
+* 438. Find All Anagrams in a String (M)
+* 424. Longest Repeating Character Replacement (M)
+* 340. Longest Substring with At Most K Distinct (M) **(Premium)**
+* 159. Longest Substring with At Most Two Distinct (M) **(Premium)**
+* 239. Sliding Window Maximum (H) *(Monotonic Queue)* ⭐
+
+# 3) Prefix Sum / Prefix XOR + Hash
+
+* 560. Subarray Sum Equals K (M) ⭐
+* 1248. Count Number of Nice Subarrays (M) *(exactly K odds)*
+* 974. Subarray Sums Divisible by K (M)
+* 325. Maximum Size Subarray Sum Equals k (M) **(Premium)**
+* 523. Continuous Subarray Sum (M)
+* 437. Path Sum III (M) *(tree + prefix)*
+* 1442. Count Triplets That Can Form Two Arrays of Equal XOR (M)
+* 930. Binary Subarrays With Sum (M)
+
+# 4) Sorting + Greedy
+
+* 56. Merge Intervals (M) ⭐
+* 252. Meeting Rooms (E) **(Premium)**
+* 253. Meeting Rooms II (M) **(Premium)** ⭐ *(heap approach too)*
+* 435. Non-overlapping Intervals (M) ⭐
+* 452. Minimum Number of Arrows to Burst Balloons (M)
+* 621. Task Scheduler (M/H) *(greedy + counts/heap)*
+* 763. Partition Labels (M)
+
+# 5) Binary Search (index & on answer)
+
+* 34. Find First and Last Position of Element in Sorted Array (M)
+* 33. Search in Rotated Sorted Array (M)
+* 74. Search a 2D Matrix (M)
+* 875. Koko Eating Bananas (M) ⭐ *(BS on answer)*
+* 1011. Capacity To Ship Packages Within D Days (M) ⭐
+* 410. Split Array Largest Sum (H) ⭐
+* 1482. Minimum Number of Days to Make m Bouquets (M)
+* 1552. Magnetic Force Between Two Balls (M)
+
+# 6) Monotonic Stack
+
+* 739. Daily Temperatures (M) ⭐
+* 496. Next Greater Element I (E)
+* 503. Next Greater Element II (M)
+* 84. Largest Rectangle in Histogram (H) ⭐
+* 85. Maximal Rectangle (H) *(stack + DP)*
+* 316. Remove Duplicate Letters (M/H) *(monotone stack + seen)*
+
+# 7) Heaps / Priority Queue
+
+* 215. Kth Largest Element in an Array (M) ⭐
+* 347. Top K Frequent Elements (M) ⭐
+* 973. K Closest Points to Origin (M)
+* 23. Merge k Sorted Lists (H) ⭐
+* 295. Find Median from Data Stream (H)
+* 502. IPO (H) *(two heaps)*
+* 632. Smallest Range Covering K Lists (H)
+
+# 8) Hashing / Counting
+
+* 1. Two Sum (E) ⭐
+* 49. Group Anagrams (M) ⭐
+* 242. Valid Anagram (E)
+* 36. Valid Sudoku (M)
+* 128. Longest Consecutive Sequence (M) ⭐
+* 380. Insert Delete GetRandom O(1) (M)
+
+# 9) Graphs & Grids (BFS/DFS)
+
+* 200. Number of Islands (M) ⭐
+* 695. Max Area of Island (M)
+* 417. Pacific Atlantic Water Flow (M)
+* 133. Clone Graph (M)
+* 417/130. Surrounded Regions (M)
+* 994. Rotting Oranges (M) *(BFS multi-source)*
+* 127. Word Ladder (H) ⭐
+* 752. Open the Lock (M)
+
+# 10) Union-Find (DSU)
+
+* 547. Number of Provinces (M) ⭐
+* 684. Redundant Connection (M) ⭐
+* 721. Accounts Merge (M)
+* 1319. Number of Operations to Make Network Connected (M)
+* 1202. Smallest String With Swaps (M)
+
+# 11) Trees (Basics + LCA)
+
+* 94/144/145. Traversals (E/M) *(iterative/recursive)*
+* 102. Binary Tree Level Order Traversal (M)
+* 543. Diameter of Binary Tree (E/M)
+* 236. Lowest Common Ancestor of a Binary Tree (M) ⭐
+* 230. Kth Smallest Element in a BST (M)
+* 105. Construct Binary Tree from Preorder and Inorder (M)
+* 124. Binary Tree Maximum Path Sum (H) ⭐
+* 297. Serialize and Deserialize Binary Tree (H)
+
+# 12) Dynamic Programming (Fundamentals)
+
+* 70. Climbing Stairs (E)
+* 198/213. House Robber I/II (M) ⭐
+* 322. Coin Change (M) ⭐
+* 518. Coin Change II (M)
+* 300. Longest Increasing Subsequence (M) ⭐
+* 1143. Longest Common Subsequence (M)
+* 72. Edit Distance (H) ⭐
+* 139. Word Break (M)
+* 416. Partition Equal Subset Sum (M)
+* 377. Combination Sum IV (M)
+* 494. Target Sum (M)
+
+# 13) Backtracking / Search with Pruning
+
+* 46. Permutations (M)
+* 39/40. Combination Sum I/II (M) ⭐
+* 78/90. Subsets I/II (M)
+* 131. Palindrome Partitioning (M)
+* 79. Word Search (M)
+* 51. N-Queens (H)
+
+# 14) Math & Bit Tricks
+
+* 191. Number of 1 Bits (E)
+* 190. Reverse Bits (E)
+* 231. Power of Two (E)
+* 136/137. Single Number I/II (E/M)
+* 201. Bitwise AND of Numbers Range (M)
+* 371. Sum of Two Integers (M)
+* 204. Sieve of Eratosthenes (M)
+
+# 15) String Toolbelt (KMP/Trie/Rolling Hash/etc.)
+
+* 28. Implement strStr() (E/M) *(do KMP)*
+* 5. Longest Palindromic Substring (M) *(expand / Manacher optional)*
+* 14. Longest Common Prefix (E)
+* 208/211. Implement Trie / Add and Search Word (M)
+* 212. Word Search II (H) *(Trie + backtracking)*
+* 1044. Longest Duplicate Substring (H) *(rolling hash / SA)*
+
+# 16) Monotonic Queue (Deque)
+
+* 239. Sliding Window Maximum (H) ⭐
+* 862. Shortest Subarray with Sum at Least K (H)
+
+# 17) Topological Sort + DP on DAG
+
+* 207. Course Schedule (M) ⭐
+* 210. Course Schedule II (M)
+* 269. Alien Dictionary (H) **(Premium)** ⭐
+* 444. Sequence Reconstruction (M/H) **(Premium)**
+
+# 18) Range DS (Fenwick/Segment Tree/Sparse Table)
+
+* 307. Range Sum Query – Mutable (M) *(Fenwick/SegTree)* ⭐
+* 315. Count of Smaller Numbers After Self (H) *(Fenwick/merge)*
+* 327. Count of Range Sum (H) *(prefix + divide & conquer / Fenwick)*
+* 493. Reverse Pairs (H)
+* 308. Range Sum Query 2D – Mutable (H) **(Premium)**
+
+# 19) Shortest-Path Variants
+
+* 743. Network Delay Time (M) *(Dijkstra)* ⭐
+* 1631. Path With Minimum Effort (M) *(Dijkstra or BS on answer)*
+* 1514. Path with Maximum Probability (M)
+* 787. Cheapest Flights Within K Stops (M) *(Bellman-Ford)*
+* 847. Shortest Path Visiting All Nodes (H) *(bitmask BFS)*
+* 1293. Shortest Path in a Grid with Obstacles Elimination (H)
+
+# 20) Flow & Matching / Graph Extras
+
+* 785. Is Graph Bipartite? (M)
+* 886. Possible Bipartition (M)
+* 1334. Find the City With the Smallest Number of Neighbors… (M) *(Floyd/Dijkstra)*
+* (Max-flow problems are rarer on LC; do one from CP-sites if time allows.)
+
+# 21) Mo’s / Offline (optional)
+
+* (Skip unless you see explicit “many range queries offline” cues.)
+
+# 22) Advanced DP Optimizations (optional)
+
+* 312. Burst Balloons (H) *(interval DP)*
+* 1547. Minimum Cost to Cut a Stick (M/H)
+* 375. Guess Number Higher or Lower II (M) *(interval DP)*
+
+# 23) Meet-in-the-Middle (optional)
+
+* 1755. Closest Subsequence Sum (H)
+
+# 24) Suffix/Palindromes (advanced)
+
+* 1044. Longest Duplicate Substring (H) *(again)*
+* 1312. Minimum Insertion Steps to Make a String Palindrome (H) *(LCS trick)*
+
+# 25) Geometry & Sweep Line (if time)
+
+* 218. The Skyline Problem (H)
+* 223. Rectangle Area (M)
+* 391. Perfect Rectangle (H)
+
+---
+
+## How to use this
+
+* **First pass:** do ⭐ in each topic (2–4 problems) to gain coverage fast.
+* **Second pass:** fill the rest of M’s; sprinkle a few H where you’re strong.
+* **Muscle memory:** keep tiny code snippets for each pattern (you already listed many).
+* **Review loop:** tag misses by *why* (pattern id, boundary, DS choice), then re-attempt in 48h.

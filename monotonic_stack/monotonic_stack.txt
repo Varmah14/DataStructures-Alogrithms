@@ -1,0 +1,195 @@
+🚀 Monotonic Stack — Complete Guide (Concept → How to Spot → How to Implement → Problems)
+1) What is it?
+
+A stack that maintains a monotone order (increasing or decreasing) while scanning a sequence. It lets you solve “next/previous greater/smaller” and “first boundary” problems in O(n) by ensuring each element is pushed/popped at most once.
+
+2) When to use (fast recognition)
+
+Trigger phrases / clues
+
+“Next/previous greater/smaller element (to left/right)”
+
+“Nearest greater/smaller”
+
+“Histogram, largest rectangle”
+
+“Daily temperatures, stock span”
+
+“Sum of subarray minimums/maximums”
+
+“Find first boundary that violates X”
+
+If you need the first index to the left/right that is ≥, >, ≤, < the current value → it’s almost certainly a monotonic stack.
+
+3) Mental model
+
+Monotone Increasing stack (values up): pop while top > cur.
+Finds next smaller (right boundary where value drops).
+
+Monotone Decreasing stack (values down): pop while top < cur.
+Finds next greater (right boundary where value rises).
+
+Store indices, not values — you often need distances/widths.
+
+4) Core templates (copy-paste)
+A) Next Greater to the Right (NGE)
+def next_greater_right(nums):
+    n = len(nums)
+    res = [-1]*n
+    st = []  # indices; keep values in decreasing order
+    for i, x in enumerate(nums):
+        while st and nums[st[-1]] < x:
+            j = st.pop()
+            res[j] = x            # or set to i for index
+        st.append(i)
+    return res
+
+B) Next Smaller to the Right (NSR)
+def next_smaller_right(nums):
+    n = len(nums)
+    res = [-1]*n
+    st = []  # indices; keep values in increasing order
+    for i, x in enumerate(nums):
+        while st and nums[st[-1]] > x:
+            j = st.pop()
+            res[j] = x            # or index i
+        st.append(i)
+    return res
+
+C) Largest Rectangle in Histogram (LC 84)
+def largestRectangleArea(h):
+    h.append(0)             # sentinel to flush
+    st, best = [-1], 0      # stack of indices; -1 as left sentinel
+    for i, x in enumerate(h):
+        while st[-1] != -1 and h[st[-1]] > x:
+            height = h[st.pop()]
+            width  = i - st[-1] - 1
+            best = max(best, height * width)
+        st.append(i)
+    return best
+
+D) Daily Temperatures (LC 739)
+def dailyTemperatures(T):
+    n = len(T)
+    res = [0]*n
+    st = []  # decreasing temps (indices)
+    for i, t in enumerate(T):
+        while st and T[st[-1]] < t:
+            j = st.pop()
+            res[j] = i - j
+        st.append(i)
+    return res
+
+E) Sum of Subarray Minimums (LC 907) — tie-handling!
+def sumSubarrayMins(arr):
+    MOD = 10**9 + 7
+    n = len(arr)
+
+    # prev strictly smaller: use '>' to keep last strictly smaller to LEFT
+    prev = [-1]*n
+    st = []
+    for i, x in enumerate(arr):
+        while st and arr[st[-1]] > x:
+            st.pop()
+        prev[i] = st[-1] if st else -1
+        st.append(i)
+
+    # next smaller-or-equal: use '>=' on RIGHT to break ties on the right
+    nxt = [n]*n
+    st = []
+    for i, x in enumerate(arr):
+        while st and arr[st[-1]] >= x:
+            j = st.pop()
+            nxt[j] = i
+        st.append(i)
+
+    ans = 0
+    for i, x in enumerate(arr):
+        L = i - prev[i]   # choices on the left
+        R = nxt[i] - i    # choices on the right
+        ans = (ans + x * L * R) % MOD
+    return ans
+
+
+Rule of thumb for ties:
+For “sum of minimums”: use > on left and >= on right (or the opposite pairing) to avoid double-counting equals. For “sum of maximums,” flip the inequalities.
+
+5) Pitfalls checklist
+
+Use indices, not raw values (you need distances/widths).
+
+Pick strict vs non-strict comparisons carefully (tie strategy).
+
+Remember sentinels (e.g., 0 at end for LC 84) to flush the stack.
+
+Compute answers on pop (that’s when both boundaries are known).
+
+For circular arrays: iterate twice or use i % n.
+
+6) Representative problem set (covers all flavors)
+Essentials — Next/Previous Greater/Smaller
+
+496. Next Greater Element I (warm-up, basic NGE)
+
+503. Next Greater Element II (circular)
+
+739. Daily Temperatures (distance to NGE)
+
+901. Online Stock Span (stream variant; keep (price, span) on stack)
+
+Histogram & Rectangles
+
+84. Largest Rectangle in Histogram (canonical)
+
+85. Maximal Rectangle (convert each row into histogram → run LC84 each row)
+
+Subarray Extremes & Sums
+
+907. Sum of Subarray Minimums (tie-handling, dual boundaries)
+
+2104. Sum of Subarray Ranges (compute sum(max) − sum(min))
+
+1856. Maximum Subarray Min-Product (min as pivot + prefix sums)
+
+Greedy/Stack Hybrids (still monotone discipline)
+
+402. Remove K Digits (monotone ↑ digits to minimize number)
+
+316. Remove Duplicate Letters / 1081. Smallest Subsequence of Distinct Characters
+(lexicographically smallest subsequence; need last-seen + in-stack flags)
+
+42. Trapping Rain Water (two-pointer is primary; stack variant is instructive)
+
+Advanced / Optional
+
+2281. Sum of Total Strength of Wizards (stack + prefix of prefix)
+
+2454. Next Greater Element IV (k-th greater — hybrid approaches with heap/indices)
+
+Suggested order to master
+
+496 → 739 → 503 → 901
+
+84 → 85
+
+907 → 2104 → 1856
+
+402 → 316/1081
+
+(Optional) 2281, 2454
+
+7) Complexity
+
+Time: O(n) (each index pushed/popped at most once)
+
+Space: O(n)
+
+8) What to memorize (minimal set)
+
+NGE template (decreasing stack; pop on <)
+
+Histogram template with sentinel & width = i - st[-1] - 1
+
+Tie-handling scheme for sum of mins/maxs
+
+“Compute on pop” reflex
