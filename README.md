@@ -151,6 +151,8 @@ Range / Arrays / Math:
 ## 🧩 REUSABLE MINI‑TEMPLATES (Pseudocode)
 
 Sliding Window (at least K):
+
+```
 ans = 0; left = 0
 for right in [0..n):
 add nums[right] to window
@@ -159,16 +161,22 @@ ans += n - right
 remove nums[left]
 left += 1
 return ans
+```
 
 Prefix Sum + HashMap (sum == K):
+
+```
 count = {0:1}; pref = 0; ans = 0
 for x in nums:
 pref += x
 ans += count.get(pref - K, 0)
 count[pref] = count.get(pref, 0) + 1
 return ans
+```
 
 Binary Search on Answer:
+
+```
 lo, hi = min_possible, max_possible
 while lo < hi:
 mid = (lo + hi) // 2
@@ -177,6 +185,7 @@ hi = mid
 else:
 lo = mid + 1
 return lo
+```
 
 ---
 
