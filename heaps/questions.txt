@@ -1,0 +1,45 @@
+Heap Patterns — LeetCode Reference
+Organized by pattern type with problem numbers and key concepts
+Pattern A: Top-K / Kth Element
+#	Problem	Key Concept
+703	Kth Largest Element in a Stream	Min-heap of size k on a stream
+215	Kth Largest Element in an Array	Min-heap of size k (or quickselect)
+347	Top K Frequent Elements	Frequency count + heap (or bucket sort)
+692	Top K Frequent Words	Heap with custom comparator / tiebreaking
+973	K Closest Points to Origin	Min-heap or max-heap of size k
+
+Pattern B: Merge K Sorted
+#	Problem	Key Concept
+23	Merge k Sorted Lists	The canonical merge-k pattern
+378	Kth Smallest Element in a Sorted Matrix	Multi-way merge or binary search on answer
+373	Find K Pairs with Smallest Sums	Lazy expansion from min-heap
+
+Pattern C: Two-Heap / Median
+#	Problem	Key Concept
+295	Find Median from Data Stream	Max-heap + min-heap balancing
+480	Sliding Window Median	Two-heap + lazy deletion for window
+
+Pattern D: Greedy + Heap (Scheduling / Resource)
+#	Problem	Key Concept
+253	Meeting Rooms II	Sort by start, heap tracks end times → min rooms
+621	Task Scheduler	Greedy cooldown + max-heap for frequencies
+767	Reorganize String	Max-heap, always place most frequent
+1834	Single-Threaded CPU	Sort by arrival, heap by processing time
+502	IPO	Greedy capital growth, two heaps
+
+Pattern E: Shortest Path / Graph
+#	Problem	Key Concept
+743	Network Delay Time	Textbook Dijkstra
+787	Cheapest Flights Within K Stops	Modified Dijkstra / BFS with constraints
+1631	Path With Minimum Effort	Dijkstra on grid (binary search also works)
+778	Swim in Rising Water	Dijkstra (min of max edge weight)
+
+Pattern F: Miscellaneous / Advanced Heap Usage
+#	Problem	Key Concept
+1046	Last Stone Weight	Simulate with max-heap
+355	Design Twitter	Merge-k pattern for news feed
+857	Minimum Cost to Hire K Workers	Sort by ratio, maintain max-heap of quality
+632	Smallest Range Covering Elements from K Lists	Multi-pointer via min-heap + track max
+895	Maximum Frequency Stack	Freq map + heap (or stack of stacks)
+1642	Furthest Building You Can Reach	Greedy with min-heap for ladders
+
