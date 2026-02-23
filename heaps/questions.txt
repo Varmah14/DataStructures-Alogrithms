@@ -2,11 +2,11 @@ Heap Patterns — LeetCode Reference
 Organized by pattern type with problem numbers and key concepts
 Pattern A: Top-K / Kth Element
 #	Problem	Key Concept
-703	Kth Largest Element in a Stream	Min-heap of size k on a stream
-215	Kth Largest Element in an Array	Min-heap of size k (or quickselect)
-347	Top K Frequent Elements	Frequency count + heap (or bucket sort)
-692	Top K Frequent Words	Heap with custom comparator / tiebreaking
-973	K Closest Points to Origin	Min-heap or max-heap of size k
+703	Kth Largest Element in a Stream	Min-heap of size k on a stream - completed
+215	Kth Largest Element in an Array	Min-heap of size k (or quickselect) - completed
+347	Top K Frequent Elements	Frequency count + heap (or bucket sort) - completed
+692	Top K Frequent Words	Heap with custom comparator / tiebreaking - completed
+973	K Closest Points to Origin	Min-heap or max-heap of size k - completed
 
 Pattern B: Merge K Sorted
 #	Problem	Key Concept
