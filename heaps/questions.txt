@@ -10,22 +10,22 @@ Pattern A: Top-K / Kth Element
 
 Pattern B: Merge K Sorted
 #	Problem	Key Concept
-23	Merge k Sorted Lists	The canonical merge-k pattern
-378	Kth Smallest Element in a Sorted Matrix	Multi-way merge or binary search on answer
-373	Find K Pairs with Smallest Sums	Lazy expansion from min-heap
+23	Merge k Sorted Lists	The canonical merge-k pattern -completed
+378	Kth Smallest Element in a Sorted Matrix	Multi-way merge or binary search on answer -completed
+373	Find K Pairs with Smallest Sums	Lazy expansion from min-heap - completed
 
 Pattern C: Two-Heap / Median
 #	Problem	Key Concept
-295	Find Median from Data Stream	Max-heap + min-heap balancing
-480	Sliding Window Median	Two-heap + lazy deletion for window
+295	Find Median from Data Stream	Max-heap + min-heap balancing - completed
+480	Sliding Window Median	Two-heap + lazy deletion for window - completed
 
 Pattern D: Greedy + Heap (Scheduling / Resource)
 #	Problem	Key Concept
-253	Meeting Rooms II	Sort by start, heap tracks end times → min rooms
-621	Task Scheduler	Greedy cooldown + max-heap for frequencies
-767	Reorganize String	Max-heap, always place most frequent
-1834	Single-Threaded CPU	Sort by arrival, heap by processing time
-502	IPO	Greedy capital growth, two heaps
+253	Meeting Rooms II	Sort by start, heap tracks end times → min rooms - completed
+621	Task Scheduler	Greedy cooldown + max-heap for frequencies - Completed
+767	Reorganize String	Max-heap, always place most frequent - completed
+1834	Single-Threaded CPU	Sort by arrival, heap by processing time - completed
+502	IPO	Greedy capital growth, two heaps - completed
 
 Pattern E: Shortest Path / Graph
 #	Problem	Key Concept
