@@ -9,11 +9,11 @@ class Solution:
         left = 0
         area = 0
         while left < right:
-            s = min(height[left],height[right]) * (right - left) 
+            s = min(height[left], height[right]) * (right - left)
             if area < s:
                 area = s
             if height[right] > height[left]:
-                left +=1
+                left += 1
             else:
                 right -= 1
         return area
