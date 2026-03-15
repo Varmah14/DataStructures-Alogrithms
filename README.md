@@ -187,19 +187,6 @@ lo = mid + 1
 return lo
 ```
 
----
-
-## 📆 4‑WEEK PRACTICE PLAN
-
-Week 1 — Arrays/Strings: Two Pointers, Sliding Window, Prefix+Hash, Monotonic Stack
-Week 2 — Greedy/Search: Sorting+Greedy, Binary Search, Heaps
-Week 3 — Graphs/Trees: BFS/DFS, DSU, Dijkstra/0‑1 BFS, Trees+LCA
-Week 4 — DP & Range: Knapsack, LIS, LCS/Edit Distance, BIT/SegTree
-
-Tip: Keep a rotating slot for Strings + optional Advanced topic.
-
----
-
 ## ✅ MASTERY CHECKLIST
 
 Global Readiness:
