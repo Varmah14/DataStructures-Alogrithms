@@ -11,9 +11,9 @@ class Solution:
         while i < j:
             s = numbers[j] + numbers[i]
             if s == target:
-                return [i+1,j+1]
+                return [i + 1, j + 1]
             elif s < target:
-                i+=1
+                i += 1
             else:
-                j-=1
+                j -= 1
         return []
