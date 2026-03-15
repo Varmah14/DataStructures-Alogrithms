@@ -34,17 +34,17 @@ for dr, dc in directions:
 
 ### BFS vs DFS — When to Use Which
 
-| Situation | Use |
-|---|---|
-| Shortest path in **unweighted** graph | **BFS** — guarantees level-by-level expansion |
-| Explore all paths / generate combinations | **DFS** |
-| Connected components, flood fill | Either (DFS simpler) |
-| Cycle detection (directed graph) | **DFS** with 3-color marking |
-| Cycle detection (undirected graph) | DFS or DSU |
-| Topological sort | **DFS** (postorder) or BFS (Kahn's) |
-| Bipartite check | BFS (2-coloring) |
+| Situation                                 | Use                                           |
+| ----------------------------------------- | --------------------------------------------- |
+| Shortest path in **unweighted** graph     | **BFS** — guarantees level-by-level expansion |
+| Explore all paths / generate combinations | **DFS**                                       |
+| Connected components, flood fill          | Either (DFS simpler)                          |
+| Cycle detection (directed graph)          | **DFS** with 3-color marking                  |
+| Cycle detection (undirected graph)        | DFS or DSU                                    |
+| Topological sort                          | **DFS** (postorder) or BFS (Kahn's)           |
+| Bipartite check                           | BFS (2-coloring)                              |
 
-**Key rule**: if the problem asks for *minimum steps/distance*, reach for BFS first.
+**Key rule**: if the problem asks for _minimum steps/distance_, reach for BFS first.
 
 ---
 
@@ -212,24 +212,24 @@ def topo_sort(n, prerequisites):
 
 ## Complexity Reference
 
-| Algorithm | Time | Space |
-|---|---|---|
-| BFS / DFS | O(V + E) | O(V) |
-| BFS on grid (R×C) | O(R×C) | O(R×C) |
-| Word Ladder | O(26 × L × N) | O(N) |
-| Topological sort | O(V + E) | O(V) |
+| Algorithm         | Time          | Space  |
+| ----------------- | ------------- | ------ |
+| BFS / DFS         | O(V + E)      | O(V)   |
+| BFS on grid (R×C) | O(R×C)        | O(R×C) |
+| Word Ladder       | O(26 × L × N) | O(N)   |
+| Topological sort  | O(V + E)      | O(V)   |
 
 ---
 
 ## Common Interview Traps
 
-| Trap | Fix |
-|---|---|
-| Marking visited on dequeue (not enqueue) | Always mark when you **add** to queue |
-| Forgetting disconnected components | Outer loop over all nodes, not just one BFS/DFS |
-| Using recursion on large grids (stack overflow) | Switch to iterative DFS with explicit stack |
+| Trap                                                            | Fix                                                  |
+| --------------------------------------------------------------- | ---------------------------------------------------- |
+| Marking visited on dequeue (not enqueue)                        | Always mark when you **add** to queue                |
+| Forgetting disconnected components                              | Outer loop over all nodes, not just one BFS/DFS      |
+| Using recursion on large grids (stack overflow)                 | Switch to iterative DFS with explicit stack          |
 | Not handling directed vs undirected cycle detection differently | 3-color for directed; parent-tracking for undirected |
-| Rebuilding graph for every BFS call | Build once outside, pass in |
+| Rebuilding graph for every BFS call                             | Build once outside, pass in                          |
 
 ---
 
@@ -237,45 +237,45 @@ def topo_sort(n, prerequisites):
 
 ### Pattern 1 — BFS Shortest Path
 
-| # | Problem | Why it's here |
-|---|---|---|
-| 127 | Word Ladder | Implicit state BFS. Google classic. |
-| 1091 | Shortest Path in Binary Matrix | Grid BFS with 8-directional moves |
-| 863 | All Nodes Distance K in Binary Tree | Convert tree to graph, then BFS |
-| 433 | Minimum Genetic Mutation | Word Ladder variant — same template |
+| #    | Problem                             | Why it's here                       | Status    |
+| ---- | ----------------------------------- | ----------------------------------- | --------- |
+| 127  | Word Ladder                         | Implicit state BFS. Google classic  |
+| 1091 | Shortest Path in Binary Matrix      | Grid BFS with 8-directional moves   | Completed |
+| 863  | All Nodes Distance K in Binary Tree | Convert tree to graph, then BFS     | Completed |
+| 433  | Minimum Genetic Mutation            | Word Ladder variant — same template |
 
 ### Pattern 2 — DFS / BFS Components & Flood Fill
 
-| # | Problem | Why it's here |
-|---|---|---|
-| 200 | Number of Islands | The canonical graph/grid DFS problem |
-| 130 | Surrounded Regions | Reverse flood fill from boundary |
-| 417 | Pacific Atlantic Water Flow | Multi-source DFS from both oceans |
-| 695 | Max Area of Island | DFS + return size |
+| #   | Problem                     | Why it's here                        |
+| --- | --------------------------- | ------------------------------------ |
+| 200 | Number of Islands           | The canonical graph/grid DFS problem |
+| 130 | Surrounded Regions          | Reverse flood fill from boundary     |
+| 417 | Pacific Atlantic Water Flow | Multi-source DFS from both oceans    |
+| 695 | Max Area of Island          | DFS + return size                    |
 
 ### Pattern 3 — Cycle Detection & Validation
 
-| # | Problem | Why it's here |
-|---|---|---|
-| 207 | Course Schedule | Directed cycle detection (3-color DFS) |
-| 210 | Course Schedule II | Topo sort — return the order |
-| 261 | Graph Valid Tree | Undirected: connected + no cycle |
+| #   | Problem            | Why it's here                          |
+| --- | ------------------ | -------------------------------------- |
+| 207 | Course Schedule    | Directed cycle detection (3-color DFS) |
+| 210 | Course Schedule II | Topo sort — return the order           |
+| 261 | Graph Valid Tree   | Undirected: connected + no cycle       |
 
 ### Pattern 4 — Multi-Source BFS
 
-| # | Problem | Why it's here |
-|---|---|---|
-| 994 | Rotting Oranges | Multi-source BFS, track time |
+| #   | Problem         | Why it's here                   |
+| --- | --------------- | ------------------------------- |
+| 994 | Rotting Oranges | Multi-source BFS, track time    |
 | 286 | Walls and Gates | Multi-source BFS from all gates |
-| 542 | 01 Matrix | Multi-source BFS from all 0s |
+| 542 | 01 Matrix       | Multi-source BFS from all 0s    |
 
 ### Pattern 5 — Clone / Advanced Graph
 
-| # | Problem | Why it's here |
-|---|---|---|
-| 133 | Clone Graph | DFS/BFS + HashMap for node mapping |
-| 684 | Redundant Connection | DSU or DFS cycle detection |
-| 785 | Is Graph Bipartite? | BFS 2-coloring |
+| #   | Problem              | Why it's here                      |
+| --- | -------------------- | ---------------------------------- |
+| 133 | Clone Graph          | DFS/BFS + HashMap for node mapping |
+| 684 | Redundant Connection | DSU or DFS cycle detection         |
+| 785 | Is Graph Bipartite?  | BFS 2-coloring                     |
 
 ---
 
