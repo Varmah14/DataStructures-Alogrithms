@@ -239,10 +239,3 @@ Per‑Technique:
 - Mo’s Algorithm + Hilbert Order
 
 ---
-
-## TIP
-
-Build a personal “pattern→template” snippet library.  
-Redo 10 favorite problems per pattern a week before interviews.
-
-==============================================================
