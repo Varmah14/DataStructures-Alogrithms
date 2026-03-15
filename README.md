@@ -45,35 +45,29 @@ Master these and you’ll be able to solve most interview problems quickly and r
    - Triggers: number of islands, word ladder, cycle detection.
 
 10. Union‑Find (Disjoint Set Union)
-
-- Connectivity, cycle detection, Kruskal MST.
-- Triggers: dynamic connectivity, redundant connection, accounts merge.
+    - Connectivity, cycle detection, Kruskal MST.
+    - Triggers: dynamic connectivity, redundant connection, accounts merge.
 
 11. Trees (Basics + LCA)
-
-- Traversals, subtree sums, diameters; BST inorder = sorted.
-- Triggers: kth in BST, path sums, distance queries; LCA (binary lifting).
+    - Traversals, subtree sums, diameters; BST inorder = sorted.
+    - Triggers: kth in BST, path sums, distance queries; LCA (binary lifting).
 
 12. Dynamic Programming (Fundamentals)
-
-- Memo/tabulation for overlapping subproblems & optimal substructure.
-- Families: knapsack, coin change, LIS, LCS/edit distance, grid paths.
-- Triggers: min/max cost/ways; choose/split; sequence alignments.
+    - Memo/tabulation for overlapping subproblems & optimal substructure.
+    - Families: knapsack, coin change, LIS, LCS/edit distance, grid paths.
+    - Triggers: min/max cost/ways; choose/split; sequence alignments.
 
 13. Backtracking / Search with Pruning
-
-- Generate permutations/combos; constraint search.
-- Triggers: N‑Queens, combination sum, word search, phone keypad.
+    - Generate permutations/combos; constraint search.
+    - Triggers: N‑Queens, combination sum, word search, phone keypad.
 
 14. Math & Bit Tricks
-
-- XOR, bitmasks, popcount, power‑of‑two, GCD/LCM, fast pow, sieve.
-- Triggers: subset enumeration, parity, number theory checks.
+    - XOR, bitmasks, popcount, power‑of‑two, GCD/LCM, fast pow, sieve.
+    - Triggers: subset enumeration, parity, number theory checks.
 
 15. String Toolbelt
-
-- KMP/Z for pattern search; rolling hash for duplicates; Trie for prefixes.
-- Triggers: fast substring search, repeated substrings, autocomplete.
+    - KMP/Z for pattern search; rolling hash for duplicates; Trie for prefixes.
+    - Triggers: fast substring search, repeated substrings, autocomplete.
 
 ---
 
