@@ -1,11 +1,11 @@
-# 🚀 Coding Interview Techniques & Algorithms — Playbook & Checklist
+# Coding Interview Techniques & Algorithms — Playbook & Checklist
 
 A high‑coverage roadmap of patterns + classic algorithms.
 Master these and you’ll be able to solve most interview problems quickly and reliably.
 
 ---
 
-## 📌 CORE PATTERNS (The 80/20)
+## CORE PATTERNS (The 80/20)
 
 1. Two Pointers
    - Use on sorted arrays/strings to converge from ends (dedup, partition, pair sums, Dutch flag).
@@ -71,7 +71,7 @@ Master these and you’ll be able to solve most interview problems quickly and r
 
 ---
 
-## 🎯 INTERMEDIATE / HIGH-ROI EXTRAS
+## INTERMEDIATE / HIGH-ROI EXTRAS
 
 16. Monotonic Queue (Deque) — sliding window min/max; DP speedups.
 17. Topological Sort + DP on DAGs — scheduling, longest path in DAG.
@@ -86,7 +86,7 @@ Master these and you’ll be able to solve most interview problems quickly and r
 
 ---
 
-## 🧭 QUICK MAPPING: Clues → Techniques
+## QUICK MAPPING: Clues → Techniques
 
 - Subarray/substring at most/exactly K → Sliding window; or Prefix+Hash.
 - Count subarrays sum==k / xor==k → Prefix + HashMap.
@@ -105,7 +105,7 @@ Master these and you’ll be able to solve most interview problems quickly and r
 
 ---
 
-## 📚 NOTABLE ALGORITHMS TO PREPARE (One‑Liners)
+## NOTABLE ALGORITHMS TO PREPARE (One‑Liners)
 
 Graphs & Trees:
 
@@ -141,47 +141,7 @@ Range / Arrays / Math:
 - Sweep Line — interval/geometry
 
 ---
-
-## 🧩 REUSABLE MINI‑TEMPLATES (Pseudocode)
-
-Sliding Window (at least K):
-
-```
-ans = 0; left = 0
-for right in [0..n):
-add nums[right] to window
-while predicate(window) is true:
-ans += n - right
-remove nums[left]
-left += 1
-return ans
-```
-
-Prefix Sum + HashMap (sum == K):
-
-```
-count = {0:1}; pref = 0; ans = 0
-for x in nums:
-pref += x
-ans += count.get(pref - K, 0)
-count[pref] = count.get(pref, 0) + 1
-return ans
-```
-
-Binary Search on Answer:
-
-```
-lo, hi = min_possible, max_possible
-while lo < hi:
-mid = (lo + hi) // 2
-if ok(mid):
-hi = mid
-else:
-lo = mid + 1
-return lo
-```
-
-## ✅ MASTERY CHECKLIST
+## MASTERY CHECKLIST
 
 Global Readiness:
 
@@ -201,7 +161,7 @@ Per‑Technique:
 
 ---
 
-## 🧠 COMPLEXITY & CONSTRAINTS HEURISTICS
+## COMPLEXITY & CONSTRAINTS HEURISTICS
 
 - n ≈ 1e5 → aim O(n) or O(n log n); avoid O(n^2)
 - Use monotonicity → binary search on answer
@@ -210,7 +170,7 @@ Per‑Technique:
 
 ---
 
-## 📌 OPTIONAL ADVANCED TOPICS
+## OPTIONAL ADVANCED TOPICS
 
 - Heavy‑Light Decomposition (tree paths)
 - Euler Tour + RMQ
