@@ -1,0 +1,11 @@
+name: check branch name
+on: [push]
+
+jobs:
+  branch_name:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: branch name
+        run: | 
+          echo 'The name of this branch is' ${{github.ref_name}}
